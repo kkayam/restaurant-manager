@@ -51,11 +51,10 @@ class Canvas extends React.Component {
     }
 
     render() {
-      const elements = this.state.elements;
       return (
           <div className="canvas">
               <ReactFlow 
-              elements={elements}
+              elements={this.state.elements}
               style={{margin:0}} 
               zoomOnScroll={true} 
               preventScrolling={true} 

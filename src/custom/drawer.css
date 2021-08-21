@@ -20,13 +20,11 @@ input {
 
 
 div.drawer-child {
-    /* border: outset; */
     font-size: 20pt;
     min-height: 40px;
     padding-left: 10px;
     margin-bottom: 10px;
     padding-right: 10px;
-    /* vertical-align: ; */
 }
 
 div.drawer-child>button {
@@ -49,14 +47,18 @@ div.drawer-child>button.x:focus {
     background-color: rgb(255, 211, 211)
 }
 
+div.footer>button {
+    float:left;
+}
 
-div.drawer-child>button.minus{
+
+div>button.minus{
     background-color:indianred;
 }
-div.drawer-child>button.minus:hover {
+div>button.minus:hover {
     background-color: rgb(150, 67, 67);
 }
-div.drawer-child>button.minus:focus {
+div>button.minus:focus {
     background-color: rgb(255, 211, 211)
 }
 
@@ -69,6 +71,23 @@ div.drawer-child>button.plus:hover {
 }
 div.drawer-child>button.plus:focus {
     background-color: rgb(157, 245, 157)
+}
+
+
+button.clear{
+    border: 0;
+    font-weight: bolder;
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color:indianred;
+}
+button.clear:hover {
+    background-color: rgb(150, 67, 67);
+}
+button.clear:focus {
+    background-color: rgb(255, 211, 211)
 }
 
 

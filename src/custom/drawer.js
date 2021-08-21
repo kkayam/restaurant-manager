@@ -27,7 +27,7 @@ class MyDrawer extends React.Component {
     this.delete_order = this.delete_order.bind(this)
     this.add_button = this.add_button.bind(this)
     this.minus_button = this.minus_button.bind(this)
-
+    this.clear_orders = this.clear_orders.bind(this)
   }
 
   componentDidMount(){
@@ -104,6 +104,12 @@ class MyDrawer extends React.Component {
     return sum;
   }
 
+  clear_orders(){
+    var data=this.state.orders[this.props.current_table-1];
+    Object.keys(data).forEach(order => data[order] = this.props.firebase.firestore.FieldValue.delete())
+    this.orders_db.doc(String(this.props.current_table)).update(data);
+  }
+
   render() {
     return (
       <div class="drawer">
@@ -144,6 +150,8 @@ class MyDrawer extends React.Component {
 
         <div class ="footer">
           Total: {this.get_total()}{" SEK"}
+          <br/>
+          <button class = "clear" onClick={this.clear_orders}>C</button>
         </div>
       </div>  
     );
